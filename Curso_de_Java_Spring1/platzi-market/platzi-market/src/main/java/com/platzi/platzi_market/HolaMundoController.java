@@ -20,6 +20,11 @@ public class HolaMundoController {
     public String despedir(){
         return "Adios mundo cruel :( ";
     }
+
+    @GetMapping("/luego")
+    public String vista(){
+        return "Hasta la vista baby B) ";
+    }
 }
 
 //http://localhost:8080/saludar/hola
