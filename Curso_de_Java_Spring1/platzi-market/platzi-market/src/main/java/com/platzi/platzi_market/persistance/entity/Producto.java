@@ -2,6 +2,8 @@ package com.platzi.platzi_market.persistance.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity //Indica que está clase va a ser utilizada para mapear una tabla de la base de datos
 @Table(name="productos") //cuando hay diferencias de nombres y queremos referenciar a la tabla que queremos
 public class Producto {
@@ -26,11 +28,14 @@ public class Producto {
     @Column(name= "cantidad_stock")
     private Integer cantidadStock;
 
-
-
-
-
     private  Boolean estado;
+
+    @ManyToOne //definimos la relación entre las tablas producto y categoria
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false) //name: PK de categoria, insertable:no se borrara ni insertara(false), updatable: (no se actualizará)
+    private Categoria categoria;
+
+    @OneToMany(mappedBy = "producto")
+    private List<ComprasProducto> productos;
 
     public Integer getIdProducto() {
         return idProducto;

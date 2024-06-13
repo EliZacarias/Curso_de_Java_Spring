@@ -2,6 +2,8 @@ package com.platzi.platzi_market.persistance.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "categorias")
 public class Categoria {
@@ -16,6 +18,10 @@ public class Categoria {
 
     @Column(name = "estado")
     private Boolean active;
+
+    @OneToMany(mappedBy = "categoria" ) //aqui ponemos la relación con productos y se lee que una categoria tiene varios productos
+                                //que relacion respalda este nuevo atributo el cual es el nombre de categoria que es "categoria"
+    private List<Producto> productos; //creamos una lista de productos
 
     public Integer getId() {
         return id;
