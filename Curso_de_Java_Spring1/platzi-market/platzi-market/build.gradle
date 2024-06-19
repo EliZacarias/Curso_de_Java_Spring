@@ -26,6 +26,11 @@ dependencies {
 
 	runtimeOnly 'org.postgresql:postgresql' // la forma de conectar postgresql con proyectos maven
 
+	implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+	//MapStruct es una biblioteca de Java que simplifica la creación de mapeos entre objetos.
+	// En otras palabras, te ayuda a convertir un tipo de objeto en otro de manera fácil y segura
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+
 }
 
 tasks.named('test') {
