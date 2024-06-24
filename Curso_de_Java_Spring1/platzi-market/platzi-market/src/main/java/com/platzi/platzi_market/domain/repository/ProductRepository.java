@@ -9,6 +9,8 @@ public interface ProductRepository {
     //nombre de los metodos que queremos que cualquier
     // repo que trabaje con productos tenga que implementar
     //implementa ProductoRepository
+
+
     List<Product> getAll();
     Optional<List<Product>> getByCategory(int categoryId);
     Optional<List<Product>> getScarseProducts(int quantity);
