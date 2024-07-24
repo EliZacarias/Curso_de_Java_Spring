@@ -11,7 +11,7 @@ import java.util.List;
 
 @Mapper(componentModel = "Spring", uses = {CategoryMapper.class}) //como estamos usando category y ya tiene su mapper
                                                                 // propio agregamos el uses para agregar la clase de categoria ocupada para mapear
-public interface ProductMapper {
+commtpublic interface ProductMapper {
     @Mappings({
             @Mapping(source = "idProducto", target = "productId"),
             @Mapping(source = "nombre", target = "name"),

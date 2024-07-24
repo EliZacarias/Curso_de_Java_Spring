@@ -13,7 +13,9 @@ import java.util.Optional;
 @Repository
 public class ProductoRepository implements ProductRepository { //
 
+    @Autowired //debemos estar 100% seguro que el componente sea de spring //lo vemos en la clase crudrepository
     private ProductoCrudRepository productoCrudRepository;
+    @Autowired //debemos estar 100% seguro que el componente sea de spring //lo vemos en la clase ProductMapper
     private ProductMapper mapper; //implementamos el mapeado
 
     @Override //lo estmos utilizando de la interface
